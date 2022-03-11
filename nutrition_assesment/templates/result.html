@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Avalia Nutri - Resultado</title>
+{% endblock title %}
+
+{% block content %}
+    <h2>Resultado</h2>
+    <button onclick="location.href='{{ url_for('index') }}'">Voltar</button>
+    <p>
+        {{ name }},
+        {% if sex == "m" %}
+            masculino,
+        {% else %}
+            feminino,
+        {% endif %}
+        {{ age }} anos, {{ weight }} kg, {{ height }} m
+    </p>
+    <br>
+    <span>IMC: {{ imc }}</span><br>
+    <span>Média IMC: {{ average_imc }}</span><br>
+    <span>Classificação do IMC: {{ title_imc }}</span><br>
+    <span>Peso Teórico: {{ theorical_weight }}</span><br>
+    <span>TMB: {{ tmb }}</span><br>
+    <span>VET: {{ vet }}</span><br>
+    <span>GTE: {{ gte }}</span><br>
+    <hr>
+    <details>
+        <summary>IMC</summary>
+        <p><i>Índice de Massa Corpórea</i> é alguma coisa que ainda vou descrever.</p>
+    </details>
+    <details>
+        <summary>Média IMC</summary>
+        <p>Média do <i>Índice de Massa Corpórea</i>.</p>
+    </details>
+    <details>
+        <summary>Clasificação do IMC</summary>
+        <p>Nível do <i>Índice de Massa Corpórea</i>.</p>
+    </details>
+    <details>
+        <summary>Peso Teórico</summary>
+        <p>Peso correspondente ao ideal do paciente.</p>
+    </details>
+    <details>
+        <summary>TMB</summary>
+        <p>Corresponde a <i>Taxa Metabólica Basal</i>, que é alguma coisa que também não sei mas vou saber um dia se Deus quiser pq ele quer.</p>
+    </details>
+    <details>
+        <summary>VET</summary>
+        <p>Abreviação de Veterinário kkkkkkkkk brincadeira, é <i>Valor Energético Total</i>, que é outra coisa massa também que a Larissa sabe mas eu não, senhor me ajuda.</p>
+    </details>
+    <details>
+        <summary>GTE</summary>
+        <p><i>Gasto Total Energético</i> é o quanto o caba consegue aguentar a pressão do mundão.</p>
+    </details>
+  
+{% endblock content %}

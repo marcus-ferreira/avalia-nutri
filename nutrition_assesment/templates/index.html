@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Avalia Nutri - Página Inicial</title>
+{% endblock title %}
+
+{% block content %}
+    <h2>Página Inicial</h2>
+    <p>Bem-vindo(a) {{ user }}!</p>
+    <p>Insira as informações abaixo para cálculo nutricional.</p>
+    <button onclick="location.href='{{ url_for('logout') }}'">Desconectar</button>
+    <hr>
+
+    <form name="form" method="post" onsubmit="return validateForm()">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="sex">Sexo</label>
+        <select name="sex" id="sex">
+            <option value="m">Masculino</option>
+            <option value="f">Feminino</option>
+        </select>
+        <br>
+        <label for="age">Idade</label>
+        <input type="text" name="age" id="age">
+        <br>
+        <label for="weight">Peso</label>
+        <input type="text" name="weight" id="weight">
+        <br>
+        <label for="height">Altura</label>
+        <input type="text" name="height" id="height">
+        <br>
+        <label for="act">Nível de Atividade Física</label>
+        <select name="act" id="act">
+            <option value="0">Sedentário</option>
+            <option value="1">Moderado</option>
+            <option value="2">Ativo</option>
+            <option value="3">Muito Ativo</option>
+        </select>
+        <br>
+        <input type="reset" value="Limpar">
+        <input type="submit" value="Calcular">
+    </form>
+{% endblock content %}
