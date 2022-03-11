@@ -1,20 +1,18 @@
 from flask import render_template, session, request, url_for, redirect
-from nutrition_assesment import app
-from nutrition_assesment.models import Account
-from nutrition_assesment.nutrition import Person
+from avalia_nutri import app
+from avalia_nutri.models import Account
+from avalia_nutri.nutrition import Person
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
-        # Load page
         if session.get("username"):
             user = session.get("username")
             return render_template("index.html", user=user)
         else:
             return redirect(url_for("login"))
     else:
-        # Post results
         try:
             name = request.form.get("name")
             sex = request.form.get("sex")

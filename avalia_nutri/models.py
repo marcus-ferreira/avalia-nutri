@@ -1,4 +1,4 @@
-from nutrition_assesment import db
+from avalia_nutri import db
 
 
 class Account(db.Model):

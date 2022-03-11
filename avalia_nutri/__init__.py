@@ -11,4 +11,4 @@ app.config.update(
 db = SQLAlchemy(app)
 
 
-from nutrition_assesment import routes
+from avalia_nutri import routes
