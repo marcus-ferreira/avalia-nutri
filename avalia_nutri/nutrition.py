@@ -8,12 +8,15 @@ class Person:
         self.act = int(act)
 
     def get_imc(self):
+        """Return IMC"""
         return round(self.weight / (self.height ** 2), 2)
 
     def get_average_imc(self):
+        """Return average IMC"""
         return 22 if self.sex == "m" else 20
 
     def get_title_imc(self):
+        """Return IMC classification"""
         if self.age < 10:
             return "Não calculado devido à faixa etária."
 
@@ -54,7 +57,7 @@ class Person:
                 return "Percentil entre 50 e 85: Eutrofia"
             elif percentil[self.sex][self.age][3] <= self.get_imc() < percentil[self.sex][self.age][4]:
                 return "Percentil entre 85 e 95: Sobrepeso"
-            elif self.get_imc() >= percentil[self.sex][self.age][4]:
+            else:
                 return "Percentil acima de 95: Obesidade"
 
         elif 20 <= self.age < 65:
@@ -72,7 +75,7 @@ class Person:
                 return "Obesidade Grau I"
             elif 35.0 <= self.get_imc() < 40:
                 return "Obesidade Grau II"
-            elif self.get_imc() >= 40.0:
+            else:
                 return "Obesidade Grau III"
 
         elif self.age >= 65:
@@ -82,13 +85,15 @@ class Person:
                 return "Eutrofia"
             elif 28 <= self.get_imc() < 30:
                 return "Sobrepeso"
-            elif self.get_imc() >= 30:
+            else:
                 return "Obesidade"
 
     def get_theorical_weight(self):
+        """Return theorical weight"""
         return round(self.get_average_imc() * (self.height ** 2), 2)
 
     def get_tmb(self) -> float:
+        """Return TMB"""
         if self.sex == "m":
             if self.age < 3:
                 return round(59.512 * self.weight - 30.4)
@@ -100,7 +105,7 @@ class Person:
                 return round(15.057 * self.weight + 692.2)
             elif 30 <= self.age < 60:
                 return round(11.472 * self.weight + 873.1)
-            elif self.age >= 60:
+            else:
                 return round(11.711 * self.weight + 587.7)
         elif self.sex == "f":
             if self.age < 3:
@@ -113,21 +118,23 @@ class Person:
                 return round(14.818 * self.weight + 486.6)
             elif 30 <= self.age < 60:
                 return round(8.126 * self.weight + 845.6)
-            elif self.age >= 60:
+            else:
                 return round(9.082 * self.weight + 658.5)
 
     def get_vet(self):
+        """Return VET"""
         if 19 <= self.age < 60:
             if self.act == 0 or self.act == 1:
                 return round(self.get_tmb() * 1.53)
             elif self.act == 2:
                 return round(self.get_tmb() * 1.76)
-            elif self.act == 3:
+            else:
                 return round(self.get_tmb() * 2.25)
         else:
             return "Não calculado devido à faixa etária."
 
     def get_gte(self):
+        """Return GTE"""
         if 9 <= self.age < 18:
             if self.sex == "m":
                 if self.act == 0:

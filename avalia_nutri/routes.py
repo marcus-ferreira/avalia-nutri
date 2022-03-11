@@ -26,11 +26,11 @@ def index():
             person = Person(name, sex, age, weight, height, act)
 
             imc = person.get_imc()
-            average_imc = person.get_average_imc(),
-            title_imc = person.get_title_imc(),
-            theorical_weight = person.get_theorical_weight(),
-            tmb = person.get_tmb(),
-            vet = person.get_vet(),
+            average_imc = person.get_average_imc()
+            title_imc = person.get_title_imc()
+            theorical_weight = person.get_theorical_weight()
+            tmb = person.get_tmb()
+            vet = person.get_vet()
             gte = person.get_gte()
 
         except ValueError:
