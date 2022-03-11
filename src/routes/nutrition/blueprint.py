@@ -1,10 +1,22 @@
-from flask import render_template, session, request, url_for, redirect
-from avalia_nutri import app
-from avalia_nutri.models import Account
-from avalia_nutri.nutrition import Person
+
+import flask
+
+from flask import request, render_template, session, redirect, url_for
+
+from src.routes.url_builder import UrlBuilder
+from src.person import Person
 
 
-@app.route("/", methods=["GET", "POST"])
+url_builder = UrlBuilder()
+
+nutrition_blueprint = flask.Blueprint(
+    name='nutrition',
+    import_name=__name__,
+    url_prefix=f'{url_builder.auth}',
+)
+
+
+@nutrition_blueprint.route("/", methods=["GET", "POST", ])
 def index():
     if request.method == "GET":
         if session.get("username"):
@@ -49,29 +61,3 @@ def index():
                                tmb=tmb,
                                vet=vet,
                                gte=gte)
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "GET":
-        if session.get("username"):
-            return redirect(url_for("index"))
-        else:
-            return render_template("login.html")
-    else:
-        username = request.form.get("username")
-        password = request.form.get("password")
-
-        account = Account.query.filter_by(username=username).first()
-        if account and password == account.password:
-            session['username'] = username
-            return redirect(url_for("index"))
-        else:
-            return render_template("login.html") + "Usuário/Senha incorreta. Tente novamente."
-
-
-@app.route("/logout")
-def logout():
-    if session.get("username"):
-        session.pop("username")
-    return redirect(url_for("login"))
