@@ -1,4 +1,4 @@
-from avalia_nutri import db
+from src import db
 
 
 class Account(db.Model):

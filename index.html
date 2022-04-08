@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Avalia Nutri</title>
+</head>
+
+<body>
+
+	<header class="main-header">
+		<h1>AVALIA NUTRI</h1>
+		<h2>Larissa de Lima, CFN n. XXXXXX</h2>
+	</header>
+	
+	<main class="main-container">
+		<form onsubmit="calculate()">
+			<section class="form-group">
+				<label for="sex">Sexo</label>
+				<select name="sex" id="sex" class="form-control">
+					<option value="">Selecione</option>
+					<option value="m">Masculino</option>
+					<option value="f">Feminino</option>
+				</select>
+			</section>
+			<section class="form-group">
+				<label for="age">Idade</label>
+				<input type="number" name="age" id="age" class="form-control">
+			</section>
+			<section class="form-group">
+				<label for="weight">Peso</label>
+				<input type="weight" name="weight" id="weight" class="form-control">
+			</section>
+			<section class="form-group">
+				<label for="height">Altura</label>
+				<input type="height" name="height" id="height" class="form-control">
+			</section>
+			<section class="form-group">
+				<label for="act">Atividade</label>
+				<select name="act" id="act" class="form-control">
+					<option value="">Selecione</option>
+					<option value="1">Sedentário</option>
+					<option value="2">Leve</option>
+					<option value="3">Moderado</option>
+					<option value="4">Intenso</option>
+				</select>
+			</section>
+			<section class="form-group">
+				<button type="submit">Calcular</button>
+			</section>
+		</form>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

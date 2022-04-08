@@ -1,7 +1,7 @@
 from flask import render_template, session, request, url_for, redirect
-from avalia_nutri import app
-from avalia_nutri.models import Account
-from avalia_nutri.nutrition import Person
+from src import app
+from src.models import Account
+from src.nutrition import Person
 
 
 @app.route("/", methods=["GET", "POST"])
