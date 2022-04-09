@@ -1,20 +1,20 @@
 :root {
-	--color1: #333333;
-	--color2: #48e5c2;
-	--color3: #fcfaf9;
-	--color4: #f3d3bd;
-	--color5: #5e5e5e;
+	--color1: #f1ffe7;
+	--color2: #a9fdac;
+	--color3: #44cf6c;
+	--color4: #32a287;
+	--color5: #6c464e;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
-	color: var(--color5);
+	color: var(--color4);
 }
 
 body {
-	background-color: var(--color2);
+	background-color: var(--color1);
 }
 
 .main-header {
@@ -32,16 +32,20 @@ body {
 
 .main-header h2 {
 	text-align: center;
-	font-size: 12px;
-	font-weight: 100;
+	font-size: 16px;
+	font-weight: 400;
 	font-style: italic;
 	letter-spacing: 1px;
 	padding: 10px;
 }
 
 .main-container {
-	margin: 40px auto;
+	margin: 50px auto;
 	width: 90%;
+}
+
+.main-container h2 {
+	text-align: center;
 }
 
 .form-group {
@@ -70,17 +74,15 @@ body {
 }
 
 .form-control:focus {
-	outline: none;
-	border: 1px solid var(--color1);
 	box-shadow: 0 0 10px var(--color5);
-}	
+}
 
-.form-group button {
+button {
 	margin-top: 20px;
 	padding: 10px;
 	width: 100%;
-	background-color: var(--color1);
-	color: var(--color3);
+	background-color: var(--color4);
+	color: var(--color1);
 	border: none;
 	border-radius: 10px;
 	font-weight: bold;
@@ -88,9 +90,53 @@ body {
 	cursor: pointer;
 }
 
+.result-container {
+	display: none;
+	width: 90%;
+	margin: 15px auto;
+}
+
+.result-container h2 {
+	text-align: center;
+	padding: 15px;
+}
+
+.result-group {
+	background-color: var(--color3);
+	padding: 20px;
+	border-radius: 10px;
+	margin: 15px auto;
+}
+
+.result-group h3 {
+	color: var(--color2);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.result-group p:nth-of-type(1) {
+	color: var(--color1);
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+.result-group p:nth-of-type(2) {
+	color: var(--color1);
+	font-size: 16px;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+.result-group span {
+	color: var(--color1);
+	font-size: 15px;
+	font-weight: 100;
+}
+
 footer {
 	display: flex;
-	background-color: var(--color1);
+	margin-top: 50px;
+	background-color: var(--color4);
 	justify-content: center;	
 	align-items: center;
 	width: 100%;
@@ -98,10 +144,11 @@ footer {
 }
 
 footer p {
-	color: var(--color3);
+	color: var(--color1);
 	margin-right: 30px;
 }
 
 footer img {
 	width: 30px;
 }
+

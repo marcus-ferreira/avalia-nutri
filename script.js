@@ -219,7 +219,32 @@ function calculate() {
 		}
 	}
 
-	alert(`IMC: ${imc()} - ${imcClassification()}\nPeso Teórico: ${theoricalWeight()} kg\nVET: ${vet()}\nTMB: ${tmb()}\nGTE: ${gte()}`);
+	let imcResult = document.getElementById("imc");
+	let imcClassificationResult = document.getElementById("imcClassification");
+	let theoricalWeightResult = document.getElementById("theoricalWeight");
+	let vetResult = document.getElementById("vet");
+	let tmbResult = document.getElementById("tmb");
+	let gteResult = document.getElementById("gte");
+
+	imcResult.innerHTML = imc() + " kg/m²";
+	imcClassificationResult.innerHTML = " - " + imcClassification() ;
+	theoricalWeightResult.innerHTML = theoricalWeight() + " kg";
+	vetResult.innerHTML = vet();
+	tmbResult.innerHTML = tmb();
+	gteResult.innerHTML = gte();
+
+	displayResults();
 }
 
-// imc, peso teorico, vet, tmb, gte
+function displayResults() {
+	let main = document.getElementById("main-container");
+	let result = document.getElementById("result-container");
+	window.scrollTo(0, 0);
+	main.style.display = "none";
+	result.style.display = "block";
+}
+
+function redo() {
+	location.reload();
+	window.scrollTo(0, 0);
+}

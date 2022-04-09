@@ -16,8 +16,45 @@
 		<h2>Larissa de Lima, CFN n. XXXXXX</h2>
 	</header>
 
-	<main class="main-container">
-		<form onsubmit="calculate()">
+	<section id="result-container" class="result-container">
+		<h2>Resultado</h2>
+
+		<section class="result-group">
+			<h3>IMC</h3>
+			<p id="imc"><span> - </span><span id="imcClassification"></span></p>
+			<p>Explicação sobre IMC.</p>
+		</section>
+
+		<section class="result-group">
+			<h3>Peso Teórico</h3>
+			<p id="theoricalWeight"></p>
+			<p>Explicação sobre peso teórico.</p>
+		</section>
+
+		<section class="result-group">
+			<h3>VET</h3>
+			<p id="vet"></p>
+			<p>Explicação sobre VET.</p>
+		</section>
+
+		<section class="result-group">
+			<h3>TMB</h3>
+			<p id="tmb"></p>
+			<p>Explicação sobre TMB.</p>
+		</section>
+
+		<section class="result-group">
+			<h3>GTE</h3>
+			<p id="gte"></p>
+			<p>Explicação sobre GTE.</p>
+		</section>
+
+		<button onclick="redo()">Refazer</button>
+	</section>
+
+	<main id="main-container" class="main-container">
+		<h2>Avaliação Nutricional</h2>
+		<form action="" method="post">
 			<section class="form-group">
 				<label for="sex">Sexo</label>
 				<select name="sex" id="sex" class="form-control">
@@ -49,7 +86,7 @@
 				</select>
 			</section>
 			<section class="form-group">
-				<button type="submit">Calcular</button>
+				<button type="button" onclick="calculate()">Calcular</button>
 			</section>
 		</form>
 	</main>
