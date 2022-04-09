@@ -1,12 +1,20 @@
+:root {
+	--color1: #333333;
+	--color2: #48e5c2;
+	--color3: #fcfaf9;
+	--color4: #f3d3bd;
+	--color5: #5e5e5e;
+}
+
 * {
 	margin: 0;
 	padding: 0;
-	color: #04AA6D;
 	font-family: 'Open Sans', sans-serif;
+	color: var(--color5);
 }
 
 body {
-	background-color: #d9fcef;
+	background-color: var(--color2);
 }
 
 .main-header {
@@ -33,18 +41,13 @@ body {
 
 .main-container {
 	margin: 40px auto;
-	width: 80%;
-	padding: 20px;
-	box-shadow: 0 0 10px #04AA6D;
-	border-radius: 5px;
-	background-color: white;
+	width: 90%;
 }
 
 .form-group {
 	display: flex;
 	flex-direction: column;
 	margin: 20px auto;
-	width: 80%;
 
 }
 
@@ -59,25 +62,25 @@ body {
 .form-control {
 	padding: 10px;
 	height: 20%;
-	border: 1px solid #04AA6D;
+	border: none;
 	border-radius: 5px;
-	background-color: #e6fef5;
-	color: #04AA6D;
+	background-color: var(--color3);
+	color: var(--color1);
 	transition: all 0.1s ease-in-out;
 }
 
 .form-control:focus {
 	outline: none;
-	border: 1px solid #04AA6D;
-	box-shadow: 0 0 10px #04AA6D;
+	border: 1px solid var(--color1);
+	box-shadow: 0 0 10px var(--color5);
 }	
 
 .form-group button {
 	margin-top: 20px;
 	padding: 10px;
 	width: 100%;
-	background-color: #04AA6D;
-	color: white;
+	background-color: var(--color1);
+	color: var(--color3);
 	border: none;
 	border-radius: 10px;
 	font-weight: bold;
@@ -87,7 +90,7 @@ body {
 
 footer {
 	display: flex;
-	background-color: #04AA6D;
+	background-color: var(--color1);
 	justify-content: center;	
 	align-items: center;
 	width: 100%;
@@ -95,7 +98,7 @@ footer {
 }
 
 footer p {
-	color: white;
+	color: var(--color3);
 	margin-right: 30px;
 }
 
