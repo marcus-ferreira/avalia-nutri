@@ -2,10 +2,10 @@ function calculate() {
 
 	// Inputs
 	let sex = document.getElementById('sex').value;
-	let age = document.getElementById('age').value;
-	let weight = document.getElementById('weight').value;
-	let height = document.getElementById('height').value;
-	let act = document.getElementById('act').value;
+	let age = parseInt(document.getElementById('age').value);
+	let weight = parseFloat(document.getElementById('weight').value);
+	let height = parseFloat(document.getElementById('height').value.replace(',', '.'));
+	let act = parseInt(document.getElementById('act').value);
 
 	let imc = () => {
 		return (weight / (height ** 2)).toFixed(2);
@@ -54,45 +54,47 @@ function calculate() {
 				}
 			}
 
-			if (imc < percentil[sex][age][0]) {
+			if (imc() < percentil[sex][age][0]) {
 				return "Percentil < 5: Baixo Peso";
-			} else if (imc >= percentil[sex][age][0] && imc < percentil[sex][age][1]) {
+			} else if (imc() >= percentil[sex][age][0] && imc() < percentil[sex][age][1]) {
 				return "Percentil entre 5 e 15: Eutrofia";
-			} else if (imc >= percentil[sex][age][1] && imc < percentil[sex][age][2]) {
+			} else if (imc() >= percentil[sex][age][1] && imc() < percentil[sex][age][2]) {
 				return "Percentil entre 15 e 50: Eutrofia";
-			} else if (imc >= percentil[sex][age][2] && imc < percentil[sex][age][3]) {
+			} else if (imc() >= percentil[sex][age][2] && imc() < percentil[sex][age][3]) {
 				return "Percentil entre 50 e 85: Eutrofia";
-			} else if (imv >= percentil[sex][age][3] <= imc < percentil[sex][age][4]) {
+			} else if (imc() >= percentil[sex][age][3] <= imc() < percentil[sex][age][4]) {
 				return "Percentil entre 85 e 95: Sobrepeso";
 			} else {
 				return "Percentil acima de 95: Obesidade";
 			}
 
 		} else if (age >= 20 && age < 65) {
-			if (imc < 16) {
+			if (imc() < 16) {
 				return "Magreza Grau III";
-			} else if (imc >= 16 && imc < 17) {
+			} else if (imc() >= 16 && imc() < 17) {
 				return "Magreza Grau II";
-			} else if (imc >= 17 && imc < 18.5) {
+			} else if (imc() >= 17 && imc() < 18.5) {
 				return "Magreza Grau I";
-			} else if (imc >= 18.5 && imc < 25) {
+			} else if (imc() >= 18.5 && imc() < 25) {
 				return "Eutrofia";
-			} else if (imc >= 25 && imc < 30) {
+			} else if (imc() >= 25 && imc() < 30) {
 				return "Sobrepeso";
-			} else if (imc >= 30 && imc < 35) {
+			} else if (imc() >= 30 && imc() < 35) {
 				return "Obesidade Grau I";
-			} else if (imc >= 35 && imc < 40) {
+			} else if (imc() >= 35 && imc() < 40) {
 				return "Obesidade Grau II";
-			} else {
+			} else if (imc() >= 40) {
 				return "Obesidade Grau III";
+			} else {
+				return "Não calculado.";
 			}
 
 		} else {
-			if (imc < 23) {
+			if (imc() < 23) {
 				return "Baixo Peso";
-			} else if (imc >= 23 && imc < 28) {
+			} else if (imc() >= 23 && imc() < 28) {
 				return "Eutrofia";
-			} else if (imc >= 28 && imc < 30) {
+			} else if (imc() >= 28 && imc() < 30) {
 				return "Sobrepeso";
 			} else {
 				return "Obesidade";
@@ -101,17 +103,17 @@ function calculate() {
 	};
 
 	let theoricalWeight = () => {
-		return (averageImc * (height ** 2)).toFixed(2);
+		return (averageImc() * (height ** 2)).toFixed(2);
 	}
 
 	let vet = () => {
 		if (age >= 19 && age < 60) {
 			if (act === 0 || act === 1) {
-				return (tmb * 1.53).toFixed(2);
+				return (tmb() * 1.53).toFixed(2);
 			} else if (act === 2) {
-				return (tmb * 1.76).toFixed(2);
+				return (tmb() * 1.76).toFixed(2);
 			} else if (act === 3) {
-				return (tmb * 2.25).toFixed(2);
+				return (tmb() * 2.25).toFixed(2);
 			} else {
 				return "Não calculado.";
 			}
@@ -162,26 +164,26 @@ function calculate() {
 			if (sex === "m") {
 				switch (act) {
 					case 0:
-						return (88.5 - 61.9 * age + 1.00 * (26.7 * weight + 903 * height) + 25);
+						return (88.5 - 61.9 * age + 1.00 * (26.7 * weight + 903 * height) + 25).toFixed(2);
 					case 1:
-						return (88.5 - 61.9 * age + 1.13 * (26.7 * weight + 903 * height) + 25);
+						return (88.5 - 61.9 * age + 1.13 * (26.7 * weight + 903 * height) + 25).toFixed(2);
 					case 2:
-						return (88.5 - 61.9 * age + 1.26 * (26.7 * weight + 903 * height) + 25);
+						return (88.5 - 61.9 * age + 1.26 * (26.7 * weight + 903 * height) + 25).toFixed(2);
 					case 3:
-						return (88.5 - 61.9 * age + 1.42 * (26.7 * weight + 903 * height) + 25);
+						return (88.5 - 61.9 * age + 1.42 * (26.7 * weight + 903 * height) + 25).toFixed(2);
 					default:
 						break;
 				}
 			} else {
 				switch (act) {
 					case 0:
-						return (135.3 - 30.8 * age + 1.00 * (10 * weight + 934 * height) + 20);
+						return (135.3 - 30.8 * age + 1.00 * (10 * weight + 934 * height) + 20).toFixed(2);
 					case 1:
-						return (135.3 - 30.8 * age + 1.16 * (10 * weight + 934 * height) + 20);
+						return (135.3 - 30.8 * age + 1.16 * (10 * weight + 934 * height) + 20).toFixed(2);
 					case 2:
-						return (135.3 - 30.8 * age + 1.31 * (10 * weight + 934 * height) + 20);
+						return (135.3 - 30.8 * age + 1.31 * (10 * weight + 934 * height) + 20).toFixed(2);
 					case 3:
-						return (135.3 - 30.8 * age + 1.56 * (10 * weight + 934 * height) + 20);
+						return (135.3 - 30.8 * age + 1.56 * (10 * weight + 934 * height) + 20).toFixed(2);
 					default:
 						break;
 				}
@@ -190,26 +192,26 @@ function calculate() {
 			if (sex === "m") {
 				switch (act) {
 					case 0:
-						return (662 - 9.53 * age + 1.00 * (15.91 * weight + 539.6 * height))
+						return (662 - 9.53 * age + 1.00 * (15.91 * weight + 539.6 * height)).toFixed(2);
 					case 1:
-						return (662 - 9.53 * age + 1.11 * (15.91 * weight + 539.6 * height))
+						return (662 - 9.53 * age + 1.11 * (15.91 * weight + 539.6 * height)).toFixed(2);
 					case 2:
-						return (662 - 9.53 * age + 1.25 * (15.91 * weight + 539.6 * height))
+						return (662 - 9.53 * age + 1.25 * (15.91 * weight + 539.6 * height)).toFixed(2);
 					case 3:
-						return (662 - 9.53 * age + 1.48 * (15.91 * weight + 539.6 * height))
+						return (662 - 9.53 * age + 1.48 * (15.91 * weight + 539.6 * height)).toFixed(2);
 					default:
 						break;
 				}
 			} else {
 				switch (act) {
 					case 0:
-						return (354 - 6.91 * age + 1.00 * (9.35 * weight + 726 * height))
+						return (354 - 6.91 * age + 1.00 * (9.35 * weight + 726 * height)).toFixed(2);
 					case 1:
-						return (354 - 6.91 * age + 1.00 * (9.35 * weight + 726 * height))
+						return (354 - 6.91 * age + 1.00 * (9.35 * weight + 726 * height)).toFixed(2);
 					case 2:
-						return (354 - 6.91 * age + 1.27 * (9.35 * weight + 726 * height))
+						return (354 - 6.91 * age + 1.27 * (9.35 * weight + 726 * height)).toFixed(2);
 					case 3:
-						return (354 - 6.91 * age + 1.45 * (9.35 * weight + 726 * height))
+						return (354 - 6.91 * age + 1.45 * (9.35 * weight + 726 * height)).toFixed(2);
 					default:
 						break;
 				}
@@ -217,5 +219,7 @@ function calculate() {
 		}
 	}
 
-	alert("Em construção...");
+	alert(`IMC: ${imc()} - ${imcClassification()}\nPeso Teórico: ${theoricalWeight()} kg\nVET: ${vet()}\nTMB: ${tmb()}\nGTE: ${gte()}`);
 }
+
+// imc, peso teorico, vet, tmb, gte
