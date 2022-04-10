@@ -3,7 +3,7 @@ function calculate() {
 	// Inputs
 	let sex = document.getElementById('sex').value;
 	let age = parseInt(document.getElementById('age').value);
-	let weight = parseFloat(document.getElementById('weight').value);
+	let weight = parseFloat(document.getElementById('weight').value.replace(',', '.'));
 	let height = parseFloat(document.getElementById('height').value.replace(',', '.'));
 	let act = parseInt(document.getElementById('act').value);
 
@@ -17,7 +17,7 @@ function calculate() {
 		} else if (sex === "f") {
 			return 20;
 		} else {
-			return "Não calculado.";
+			return undefined;
 		}
 	};
 
@@ -27,7 +27,7 @@ function calculate() {
 			return "Não calculado devido à faixa etária.";
 
 		} else if (age >= 10 && age < 20) {
-			let percentil = {
+			const percentil = {
 				"m": {
 					10: [14.42, 15.15, 16.72, 19.60, 22.60],
 					11: [14.83, 15.59, 17.28, 20.35, 23.70],
@@ -55,17 +55,17 @@ function calculate() {
 			}
 
 			if (imc() < percentil[sex][age][0]) {
-				return "Percentil < 5: Baixo Peso";
+				return "<5%: Baixo Peso";
 			} else if (imc() >= percentil[sex][age][0] && imc() < percentil[sex][age][1]) {
-				return "Percentil entre 5 e 15: Eutrofia";
+				return "5~15%: Eutrofia";
 			} else if (imc() >= percentil[sex][age][1] && imc() < percentil[sex][age][2]) {
-				return "Percentil entre 15 e 50: Eutrofia";
+				return "15~50%: Eutrofia";
 			} else if (imc() >= percentil[sex][age][2] && imc() < percentil[sex][age][3]) {
-				return "Percentil entre 50 e 85: Eutrofia";
+				return "50~85%: Eutrofia";
 			} else if (imc() >= percentil[sex][age][3] <= imc() < percentil[sex][age][4]) {
-				return "Percentil entre 85 e 95: Sobrepeso";
+				return "85~95%: Sobrepeso";
 			} else {
-				return "Percentil acima de 95: Obesidade";
+				return ">95%: Obesidade";
 			}
 
 		} else if (age >= 20 && age < 65) {
@@ -86,7 +86,7 @@ function calculate() {
 			} else if (imc() >= 40) {
 				return "Obesidade Grau III";
 			} else {
-				return "Não calculado.";
+				return undefined;
 			}
 
 		} else {
@@ -115,10 +115,10 @@ function calculate() {
 			} else if (act === 3) {
 				return (tmb() * 2.25).toFixed(2);
 			} else {
-				return "Não calculado.";
+				return null;
 			}
 		} else {
-			return "Não calculado.";
+			return undefined;
 		}
 	}
 
@@ -158,7 +158,7 @@ function calculate() {
 	let gte = () => {
 
 		if (age < 9) {
-			return "Não calculado.";
+			return undefined;
 
 		} else if (age >= 9 && age < 18) {
 			if (sex === "m") {
@@ -220,18 +220,16 @@ function calculate() {
 	}
 
 	let imcResult = document.getElementById("imc");
-	let imcClassificationResult = document.getElementById("imcClassification");
 	let theoricalWeightResult = document.getElementById("theoricalWeight");
 	let vetResult = document.getElementById("vet");
 	let tmbResult = document.getElementById("tmb");
 	let gteResult = document.getElementById("gte");
 
-	imcResult.innerHTML = imc() + " kg/m²";
-	imcClassificationResult.innerHTML = " - " + imcClassification() ;
-	theoricalWeightResult.innerHTML = theoricalWeight() + " kg";
-	vetResult.innerHTML = vet();
-	tmbResult.innerHTML = tmb();
-	gteResult.innerHTML = gte();
+	imcResult.innerHTML = imc() + " <span>kg/m²</span>" + `<span> - ${imcClassification()}</span>`;
+	theoricalWeightResult.innerHTML = theoricalWeight() + " <span>kg</span>";
+	vetResult.innerHTML = vet() + " <span>kcal</span>";
+	tmbResult.innerHTML = tmb() + " <span>kcal</span>";
+	gteResult.innerHTML = gte() + " <span>kcal</span>";
 
 	displayResults();
 }
