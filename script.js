@@ -1,11 +1,36 @@
-function calculate() {
+// Inputs
+let sex = document.querySelector('#sex');
+let age = document.querySelector('#age');
+let weight = document.querySelector('#weight');
+let height = document.querySelector('#height');
+let act = document.querySelector('#act');
+let sexError = document.querySelector("#sex-error");
+let ageError = document.querySelector("#age-error");
+let weightError = document.querySelector("#weight-error");
+let heightError = document.querySelector("#height-error");
+let actError = document.querySelector("#act-error");
 
-	// Inputs
-	let sex = document.getElementById('sex').value;
-	let age = parseInt(document.getElementById('age').value);
-	let weight = parseFloat(document.getElementById('weight').value.replace(',', '.'));
-	let height = parseFloat(document.getElementById('height').value.replace(',', '.'));
-	let act = parseInt(document.getElementById('act').value);
+
+function validateInputs() {
+	(sex.value === '') ? sexError.style.display = 'flex' : sexError.style.display = 'none';
+	(age.value === '') ? ageError.style.display = 'flex' : ageError.style.display = 'none';
+	(weight.value === '') ? weightError.style.display = 'flex' : weightError.style.display = 'none';
+	(height.value === '') ? heightError.style.display = 'flex' : heightError.style.display = 'none';
+	(act.value === '') ? actError.style.display = 'flex' : actError.style.display = 'none';
+	
+	if (sex.value != '' && age.value != '' && weight.value != '' && height.value != '' && act.value != '') {
+		calculate();
+	}
+
+	window.scrollTo(0, 0);
+}
+
+function calculate() {
+	sex = sex.value;
+	age = parseInt(age.value);
+	weight = parseFloat(weight.value.replace(',', '.'));
+	height = parseFloat(height.value.replace(',', '.'));
+	act = parseInt(act.value);
 
 	let imc = () => {
 		return (weight / (height ** 2)).toFixed(2);
@@ -222,11 +247,11 @@ function calculate() {
 		}
 	}
 
-	let imcResult = document.getElementById("imc");
-	let theoricalWeightResult = document.getElementById("theoricalWeight");
-	let vetResult = document.getElementById("vet");
-	let tmbResult = document.getElementById("tmb");
-	let gteResult = document.getElementById("gte");
+	let imcResult = document.querySelector("#imc");
+	let theoricalWeightResult = document.querySelector("#theoricalWeight");
+	let vetResult = document.querySelector("#vet");
+	let tmbResult = document.querySelector("#tmb");
+	let gteResult = document.querySelector("#gte");
 
 	imcResult.innerHTML = imc() + " <span>kg/m²</span>" + `<span> - ${imcClassification()}</span>`;
 	theoricalWeightResult.innerHTML = theoricalWeight() + " <span>kg</span>";
@@ -238,8 +263,8 @@ function calculate() {
 }
 
 function displayResults() {
-	let main = document.getElementById("main-container");
-	let result = document.getElementById("result-container");
+	let main = document.querySelector("#main-container");
+	let result = document.querySelector("#result-container");
 	window.scrollTo(0, 0);
 	main.style.display = "none";
 	result.style.display = "block";

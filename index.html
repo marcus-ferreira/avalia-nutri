@@ -15,6 +15,55 @@
 		<h1>AVALIA NUTRI</h1>
 	</header>
 
+	<!-- Form -->
+	<main id="main-container" class="main-container">
+		<h2>Avaliação Nutricional</h2>
+
+		<section class="form-group">
+			<label for="sex">Sexo</label>
+			<select name="sex" id="sex" class="form-control">
+				<option value="">Selecione</option>
+				<option value="m">Masculino</option>
+				<option value="f">Feminino</option>
+			</select>
+			<p id="sex-error">Selecione o sexo.</p>
+		</section>
+
+		<section class="form-group">
+			<label for="age">Idade</label>
+			<input type="number" min="1" step="1" name="age" id="age" class="form-control">
+			<p id="age-error">Digite a idade.</p>
+		</section>
+
+		<section class="form-group">
+			<label for="weight">Peso</label>
+			<input type="number" min="1" name="weight" id="weight" class="form-control">
+			<p id="weight-error">Digite o peso.</p>
+		</section>
+
+		<section class="form-group">
+			<label for="height">Altura (em metros)</label>
+			<input type="number" min="0.1" name="height" id="height" class="form-control">
+			<p id="height-error">Digite a altura.</p>
+		</section>
+
+		<section class="form-group">
+			<label for="act">Atividade Física</label>
+			<select name="act" id="act" class="form-control">
+				<option value="">Selecione</option>
+				<option value="1">Sedentário</option>
+				<option value="2">Leve</option>
+				<option value="3">Moderado</option>
+				<option value="4">Intenso</option>
+			</select>
+			<p id="act-error">Selecione o nível de atividade física.</p>
+		</section>
+
+		<section class="form-group">
+			<button type="button" onclick="validateInputs()">Calcular</button>
+		</section>
+	</main>
+
 	<!-- Results -->
 	<section id="result-container" class="result-container">
 		<h2>Resultado</h2>
@@ -22,75 +71,35 @@
 		<section class="result-group">
 			<h3>IMC</h3>
 			<p id="imc"></p>
-			<p>Explicação sobre IMC.</p>
+			<p>Índice de massa corpórea.</p>
 		</section>
 
 		<section class="result-group">
 			<h3>Peso Teórico</h3>
 			<p id="theoricalWeight"></p>
-			<p>Explicação sobre peso teórico.</p>
+			<p>Peso ideal.</p>
 		</section>
 
 		<section class="result-group">
 			<h3>VET</h3>
 			<p id="vet"></p>
-			<p>Explicação sobre VET.</p>
+			<p>Valor energético total.</p>
 		</section>
 
 		<section class="result-group">
 			<h3>TMB</h3>
 			<p id="tmb"></p>
-			<p>Explicação sobre TMB.</p>
+			<p>Taxa metabólica basal.</p>
 		</section>
 
 		<section class="result-group">
 			<h3>GTE</h3>
 			<p id="gte"></p>
-			<p>Explicação sobre GTE.</p>
+			<p>Gasto total energético.</p>
 		</section>
 
 		<button onclick="redo()">Refazer</button>
 	</section>
-
-	<!-- Form -->
-	<main id="main-container" class="main-container">
-		<h2>Avaliação Nutricional</h2>
-		<form action="" method="post">
-			<section class="form-group">
-				<label for="sex">Sexo</label>
-				<select name="sex" id="sex" class="form-control">
-					<option value="">Selecione</option>
-					<option value="m">Masculino</option>
-					<option value="f">Feminino</option>
-				</select>
-			</section>
-			<section class="form-group">
-				<label for="age">Idade</label>
-				<input type="number" name="age" id="age" class="form-control">
-			</section>
-			<section class="form-group">
-				<label for="weight">Peso</label>
-				<input type="weight" name="weight" id="weight" class="form-control">
-			</section>
-			<section class="form-group">
-				<label for="height">Altura (insira em metros)</label>
-				<input type="height" name="height" id="height" class="form-control">
-			</section>
-			<section class="form-group">
-				<label for="act">Atividade Física</label>
-				<select name="act" id="act" class="form-control">
-					<option value="">Selecione</option>
-					<option value="1">Sedentário</option>
-					<option value="2">Leve</option>
-					<option value="3">Moderado</option>
-					<option value="4">Intenso</option>
-				</select>
-			</section>
-			<section class="form-group">
-				<button type="button" onclick="calculate()">Calcular</button>
-			</section>
-		</form>
-	</main>
 
 	<footer>
 		<p>&copy; 2022 - Marcus Ferreira</p>

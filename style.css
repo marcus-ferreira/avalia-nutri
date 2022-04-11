@@ -34,12 +34,13 @@ body {
 }
 
 .main-container {
-	margin: 50px auto;
+	margin: 15px auto;
 	width: 90%;
 }
 
 .main-container h2 {
 	text-align: center;
+	padding: 15px;
 }
 
 .form-group {
@@ -53,6 +54,14 @@ body {
 	font-size: 12px;
 	font-weight: 500;
 	text-align: left;
+}
+
+.form-group p {
+	display: none;
+	font-size: 12px;
+	font-weight: 500;
+	text-align: left;
+	color: tomato;
 }
 
 .form-control {
