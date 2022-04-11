@@ -107,7 +107,9 @@ function calculate() {
 	}
 
 	let vet = () => {
-		if (age >= 19 && age < 60) {
+		if (age < 19) {
+			return undefined;
+		} else if (age >= 19 && age < 60) {
 			if (act === 0 || act === 1) {
 				return (tmb() * 1.53).toFixed(2);
 			} else if (act === 2) {
@@ -115,7 +117,7 @@ function calculate() {
 			} else if (act === 3) {
 				return (tmb() * 2.25).toFixed(2);
 			} else {
-				return null;
+				return undefined;
 			}
 		} else {
 			return undefined;
@@ -138,6 +140,7 @@ function calculate() {
 			} else {
 				return (11.711 * weight + 587.7).toFixed(2);
 			}
+			
 		} else {
 			if (age < 3) {
 				return (58.317 * weight - 31.1).toFixed(2);
