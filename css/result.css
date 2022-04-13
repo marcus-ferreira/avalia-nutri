@@ -1,0 +1,42 @@
+.result-container {
+	display: none;
+	width: 90%;
+	margin: 15px auto;
+}
+
+.result-container h2, .result-container > p {
+	text-align: center;
+	padding: 15px;
+}
+
+.result-group {
+	background-color: var(--color3);
+	padding: 20px;
+	border-radius: 10px;
+	margin: 15px auto;
+}
+
+.result-group h3 {
+	color: var(--color2);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.result-group p:nth-of-type(1) {
+	color: var(--color1);
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+.result-group p:nth-of-type(2) {
+	color: var(--color1);
+	font-size: 16px;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+.result-group span {
+	color: var(--color1);
+	font-size: 15px;
+	font-weight: 100;
+}
