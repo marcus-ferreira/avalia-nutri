@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/result.css">
+	<link rel="stylesheet" href="css/responsive.css">
 
 	<link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/3651/premium/3651697.png?token=exp=1649825659~hmac=a24e78f339e9fdc8a0bde9865788b1fc" type="image/x-icon">
 
@@ -38,22 +39,23 @@
 
 		<section class="form-group">
 			<label for="age">Idade</label>
-			<input type="number" min="1" step="1" name="age" id="age" class="form-control">
+			<input type="number" min="1" step="1" name="age" id="age" class="form-control" autocomplete="off">
 			<p id="age-error">Digite a idade.</p>
 		</section>
 
 		<section class="form-group">
 			<label for="weight">Peso</label>
-			<input type="number" min="1" name="weight" id="weight" class="form-control">
+			<input type="number" min="1" name="weight" id="weight" class="form-control" autocomplete="off">
 			<p id="weight-error">Digite o peso.</p>
 		</section>
 
 		<section class="form-group">
 			<label for="height">Altura (em metros)</label>
-			<input type="number" min="0.1" name="height" id="height" class="form-control">
+			<input type="number" min="0.1" name="height" id="height" class="form-control" autocomplete="off">
 			<p id="height-error">Digite a altura.</p>
 		</section>
 
+		
 		<section class="form-group">
 			<label for="act">Atividade Física</label>
 			<select name="act" id="act" class="form-control">
@@ -107,7 +109,7 @@
 
 		<button onclick="redo()">Refazer</button>
 
-		<p>Este cálculo não substitui uma consulta com um profissional!</p>
+		<p>Este cálculo não substitui uma consulta com um profissional.</p>
 	</section>
 
 	<footer>
