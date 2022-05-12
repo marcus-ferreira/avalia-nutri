@@ -5,67 +5,55 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/result.css">
-	<link rel="stylesheet" href="css/responsive.css">
-
-	<link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/3651/premium/3651697.png?token=exp=1649825659~hmac=a24e78f339e9fdc8a0bde9865788b1fc" type="image/x-icon">
-
-	<script src="js/script.js" defer></script>
-
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+	<script src="assets/js/index.js" defer></script>
 	<title>Avalia Nutri</title>
 </head>
 
 <body>
 
+	<!-- Header -->
 	<header class="main-header">
-		<h1>AVALIA NUTRI</h1>
+		<h1>Avalia Nutri</h1>
 	</header>
 
 	<!-- Form -->
-	<main id="main-container" class="main-container">
-		<h2>Avaliação Nutricional</h2>
+	<main class="main-container">
 
 		<section class="form-group">
-			<label for="sex">Sexo</label>
-			<select name="sex" id="sex" class="form-control">
-				<option value="">Selecione</option>
+			<select name="sex" class="form-control sex">
+				<option value="">Sexo</option>
 				<option value="m">Masculino</option>
 				<option value="f">Feminino</option>
 			</select>
-			<p id="sex-error">Selecione o sexo.</p>
+			<p class="sex-error">Selecione o sexo.</p>
 		</section>
 
 		<section class="form-group">
-			<label for="age">Idade</label>
-			<input type="number" min="1" step="1" name="age" id="age" class="form-control" autocomplete="off">
-			<p id="age-error">Digite a idade.</p>
+			<input type="number" min="1" step="1" name="age" class="form-control age" placeholder="Idade">
+			<p class="age-error">Digite a idade.</p>
 		</section>
 
 		<section class="form-group">
-			<label for="weight">Peso</label>
-			<input type="number" min="1" name="weight" id="weight" class="form-control" autocomplete="off">
-			<p id="weight-error">Digite o peso.</p>
+			<input type="number" min="1" name="weight" class="form-control weight" placeholder="Peso">
+			<p class="weight-error">Digite o peso.</p>
 		</section>
 
 		<section class="form-group">
-			<label for="height">Altura (em metros)</label>
-			<input type="number" min="0.1" name="height" id="height" class="form-control" autocomplete="off">
-			<p id="height-error">Digite a altura.</p>
+			<input type="number" min="0.1" name="height" class="form-control height" placeholder="Altura">
+			<p class="height-error">Digite a altura.</p>
 		</section>
 
-		
 		<section class="form-group">
-			<label for="act">Atividade Física</label>
-			<select name="act" id="act" class="form-control">
-				<option value="">Selecione</option>
+			<select name="act" class="form-control act">
+				<option value="">Atividade Física</option>
 				<option value="1">Sedentário</option>
 				<option value="2">Leve</option>
 				<option value="3">Moderado</option>
 				<option value="4">Intenso</option>
 			</select>
-			<p id="act-error">Selecione o nível de atividade física.</p>
+			<p class="act-error">Selecione o nível de atividade física.</p>
 		</section>
 
 		<section class="form-group">
@@ -73,49 +61,9 @@
 		</section>
 	</main>
 
-	<!-- Results -->
-	<section id="result-container" class="result-container">
-		<h2>Resultado</h2>
-
-		<section class="result-group">
-			<h3>IMC</h3>
-			<p id="imc"></p>
-			<p>Índice de massa corpórea.</p>
-		</section>
-
-		<section class="result-group">
-			<h3>Peso Teórico</h3>
-			<p id="theoricalWeight"></p>
-			<p>Peso ideal.</p>
-		</section>
-
-		<section class="result-group">
-			<h3>VET</h3>
-			<p id="vet"></p>
-			<p>Valor energético total.</p>
-		</section>
-
-		<section class="result-group">
-			<h3>TMB</h3>
-			<p id="tmb"></p>
-			<p>Taxa metabólica basal.</p>
-		</section>
-
-		<section class="result-group">
-			<h3>GTE</h3>
-			<p id="gte"></p>
-			<p>Gasto total energético.</p>
-		</section>
-
-		<button onclick="redo()">Refazer</button>
-
-		<p>Este cálculo não substitui uma consulta com um profissional.</p>
-	</section>
-
 	<footer>
-		<p>&copy; 2022 - Marcus Ferreira</p>
-		<p>Larissa de Lima, CFN XXX</p>
-		<a href="https://github.com/marcus-ferreira" target="_blank"><img src="img/github.png" alt=""></a>
+		<p>&copy; 2022 - Marcus Ferreira, Larissa de Lima, CFN XXX</p>
+		<a href="https://github.com/marcus-ferreira" target="_blank"><img src="assets/img/github.png" alt=""></a>
 	</footer>
 </body>
 
