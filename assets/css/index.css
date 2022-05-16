@@ -31,61 +31,6 @@ body {
   text-align: center;
 }
 
-.main-container {
-  margin: 15px auto;
-  border: 2px solid white;
-  padding: 5%;
-}
-
-.main-container h2 {
-  text-align: center;
-  padding: 15px;
-}
-
-.form-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 20px auto;
-  -webkit-filter: drop-shadow(0 15px 30px);
-          filter: drop-shadow(0 15px 30px);
-}
-
-.form-group label {
-  padding-bottom: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  text-align: left;
-}
-
-.form-group p {
-  display: none;
-  font-size: 12px;
-  font-weight: 500;
-  text-align: left;
-  color: tomato;
-}
-
-.form-control {
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  border-bottom: 2px solid #44cf6c;
-  background-color: white;
-  color: #32a287;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.form-control:focus {
-  outline: none;
-  border-bottom: 2px solid #a9fdac;
-}
-
 button {
   margin-top: 20px;
   padding: 10px;
@@ -148,17 +93,58 @@ footer img {
   padding: 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .main-container,
-  .result-container {
-    width: 50%;
-  }
-  footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
+.main-container {
+  margin: 15px auto;
+  border: 2px solid white;
+  padding: 5%;
 }
-/*# sourceMappingURL=style.css.map */
+
+.main-container h2 {
+  text-align: center;
+  padding: 15px;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px auto;
+  -webkit-filter: drop-shadow(0 15px 30px);
+          filter: drop-shadow(0 15px 30px);
+}
+
+.form-group label {
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-group p {
+  display: none;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: tomato;
+}
+
+.form-control {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  border-bottom: 2px solid #44cf6c;
+  background-color: white;
+  color: #32a287;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-bottom: 2px solid #a9fdac;
+}
+/*# sourceMappingURL=index.css.map */
