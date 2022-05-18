@@ -155,5 +155,5 @@ function calculate() {
 	localStorage.setItem('tmb', tmb());
 	localStorage.setItem('gte', gte());
 
-	location.href = "/results.html";
+	location.href = "avalia-nutri/results.html";
 }
