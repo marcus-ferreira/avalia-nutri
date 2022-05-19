@@ -19,5 +19,5 @@ tmbResult.innerHTML = tmb + " <span>kcal</span>";
 gteResult.innerHTML = gte + " <span>kcal</span>";
 
 function redo() {
-	location.href = "../../index.html";
+	location.href = "./index.html";
 }

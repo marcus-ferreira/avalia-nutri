@@ -18,7 +18,7 @@ function validateInputs() {
 	(height.value === '') ? heightError.style.display = 'flex' : heightError.style.display = 'none';
 	(act.value === '') ? actError.style.display = 'flex' : actError.style.display = 'none';
 
-	if (sex.value != '' && age.value != '' && weight.value != '' && height.value != '' && act.value != '') {
+	if (sex.value && age.value && weight.value && height.value && act.value) {
 		calculate();
 	}
 }
@@ -155,5 +155,5 @@ function calculate() {
 	localStorage.setItem('tmb', tmb());
 	localStorage.setItem('gte', gte());
 
-	location.href = "./results.html";
+	location.href = "/results.html";
 }
